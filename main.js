@@ -1,9 +1,9 @@
-import { generateReturnsArray } from "./src/investimentGoals";
+import { generateReturnsArray } from "./src/investmentGoals";
 import { Chart } from "chart.js/auto";
 
 const finalMoneyChart = document.getElementById("final-money-distribution");
 const progressionChart = document.getElementById("progression");
-const form = document.getElementById("investiment-form");
+const form = document.getElementById("investment-form");
 const clearFormButton = document.getElementById("clear-form");
 
 function formatCurrency(value) {
@@ -46,7 +46,7 @@ function renderProgression(evt) {
     returnRatePeriod
   );
 
-  const finalInvestimentObject = returnsArray[returnsArray.length - 1];
+  const finalInvestmentObject = returnsArray[returnsArray.length - 1];
 
   new Chart(finalMoneyChart, {
     type: "doughnut",
@@ -56,12 +56,12 @@ function renderProgression(evt) {
         {
           //label: "My First Dataset",
           data: [
-            formatCurrency(finalInvestimentObject.investedAmount),
+            formatCurrency(finalInvestmentObject.investedAmount),
             formatCurrency(
-              finalInvestimentObject.totalInterestReturns * (1 - taxRate / 100)
+              finalInvestmentObject.totalInterestReturns * (1 - taxRate / 100)
             ),
             formatCurrency(
-              finalInvestimentObject.totalInterestReturns * (taxRate / 100)
+              finalInvestmentObject.totalInterestReturns * (taxRate / 100)
             ),
           ],
           backgroundColor: [
