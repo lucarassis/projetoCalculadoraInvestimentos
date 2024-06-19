@@ -76,7 +76,7 @@ function renderProgression(evt) {
   });
 }
 
-/*new Chart(progressionChart, {
+new Chart(progressionChart, {
   type: "bar",
   data: {
     labels: returnsArray.map((investmentObject) =>
@@ -108,7 +108,7 @@ function renderProgression(evt) {
       stacked: true,
     },
   },
-}); */
+}); 
 
 function clearForm() {
   form["starting-amount"].value = "";
