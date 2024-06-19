@@ -76,23 +76,25 @@ function renderProgression(evt) {
   });
 }
 
-new Chart(progressionChart, {
+/*new Chart(progressionChart, {
   type: "bar",
   data: {
-    labels: returnsArray.map((investmentObject) => formatCurrency(investmentObject.month)),
+    labels: returnsArray.map((investmentObject) =>
+      formatCurrency(investmentObject.month)
+    ),
     datasets: [
       {
         label: "Total Investido",
-        data: returnsArray.map(
-          (investmentObject) => formatCurrency(investmentObject.investedAmount
-        )),
+        data: returnsArray.map((investmentObject) =>
+          formatCurrency(investmentObject.investedAmount)
+        ),
         backgroundColor: "rgb(255,99,132)",
       },
       {
         label: "Retorno do Investimento",
-        data: returnsArray.map(
-          (investmentObject) => formatCurrency(investmentObject.interestReturns
-        )),
+        data: returnsArray.map((investmentObject) =>
+          formatCurrency(investmentObject.interestReturns)
+        ),
         backgroundColor: "rgb(54,162,235)",
       },
     ],
@@ -106,7 +108,7 @@ new Chart(progressionChart, {
       stacked: true,
     },
   },
-});
+}); */
 
 function clearForm() {
   form["starting-amount"].value = "";
