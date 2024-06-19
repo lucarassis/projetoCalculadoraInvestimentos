@@ -25,14 +25,13 @@
             />
             <input
               type="text"
-              class="w-5/6 rounded-r-lg px-2 "
+              class="w-5/6 rounded-r-lg px-2"
               name="starting-amount"
               id="starting-amount"
               required
               placeholder="0.00"
             />
           </div>
-          
         </div>
 
         <div class="flex w-full flex-col px-6 my-2 h-[5.25rem]">
@@ -140,15 +139,29 @@
         >
           Calcular
         </button>
-        <button id="clear-form" class="w-1/2 rounded-lg bg-emerald-100 hover:bg-emerald-500">
+        <button
+          id="clear-form"
+          class="w-1/2 rounded-lg bg-emerald-100 hover:bg-emerald-500"
+        >
           Limpar
         </button>
       </div>
     </aside>
-    <main>
-      <p>Resultados</p>
+    <main class="row-span-2 col-span-2">
+      <section id="charts-container" class="h-full">
+        <div class="h-[36%] flex flex-col items-center pb-10">
+          <p class="font-bold text-lg">Resultado Final</p>
+          <canvas id="final-money-distribution"></canvas>
+        </div>
+
+        <div class="h-[56%] flex flex-col items-center">
+          <p class="font-bold text-lg">Progressão</p>
+          <canvas id="progression"></canvas>
+        </div>
+      </section>
     </main>
 
     <script type="module" src="./main.js"></script>
+    <!-- <script src="./src/investimentGoals.js"></script> -->
   </body>
 </html>
