@@ -43,8 +43,9 @@ function renderProgression(evt) {
     timeAmountPeriod,
     additionalContribution,
     returnRate,
-    returnRatePeriod
+    returnRatePeriod,
   );
+  // console.log(returnsArray[returnsArray.length - 1]);
 
   const finalInvestmentObject = returnsArray[returnsArray.length - 1];
 
@@ -75,40 +76,39 @@ function renderProgression(evt) {
     },
   });
 }
-
-new Chart(progressionChart, {
-  type: "bar",
-  data: {
-    labels: returnsArray.map((investmentObject) =>
-      formatCurrency(investmentObject.month)
-    ),
-    datasets: [
-      {
-        label: "Total Investido",
-        data: returnsArray.map((investmentObject) =>
-          formatCurrency(investmentObject.investedAmount)
-        ),
-        backgroundColor: "rgb(255,99,132)",
-      },
-      {
-        label: "Retorno do Investimento",
-        data: returnsArray.map((investmentObject) =>
-          formatCurrency(investmentObject.interestReturns)
-        ),
-        backgroundColor: "rgb(54,162,235)",
-      },
-    ],
-  },
-  options: {
-    responsive: true,
-    scales: {
-      x: { stacked: true },
+/*new Chart(progressionChart, {
+    type: "bar",
+    data: {
+      labels: returnsArray.map((investmentObject) =>
+        formatCurrency(investmentObject.month)
+      ),
+      datasets: [
+        {
+          label: "Total Investido",
+          data: returnsArray.map((investmentObject) =>
+            formatCurrency(investmentObject.investedAmount)
+          ),
+          backgroundColor: "rgb(255,99,132)",
+        },
+        {
+          label: "Retorno do Investimento",
+          data: returnsArray.map((investmentObject) =>
+            formatCurrency(investmentObject.totalInterestReturns)
+          ),
+          backgroundColor: "rgb(54,162,235)",
+        },
+      ],
     },
-    y: {
-      stacked: true,
+    options: {
+      responsive: true,
+      scales: {
+        x: { stacked: true },
+      },
+      y: {
+        stacked: true,
+      },
     },
-  },
-}); 
+  });*/
 
 function clearForm() {
   form["starting-amount"].value = "";
